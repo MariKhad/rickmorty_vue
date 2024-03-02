@@ -2,23 +2,34 @@
   <div class="container">
     <FilterByName class="input" />
     <FilterByStatusSelect class="select" />
-    <button class="btn">Show</button>
+    <button class="btn" @click="showData">Show</button>
   </div>
 </template>
 
 <script>
 import FilterByName from "./FilterByName.vue";
 import FilterByStatusSelect from "./FilterByStatusSelect.vue";
+import { useStore } from "vuex";
 
 export default {
   components: {
     FilterByName,
     FilterByStatusSelect,
   },
-  methods: {
-    showData() {
-      // Ваша логика обработки данных
-    },
+  setup() {
+    const store = useStore();
+
+    const showData = async () => {
+      try {
+        await store.dispatch("getCharacters");
+      } catch (error) {
+        console.error("Failed to fetch characters:", error);
+      }
+    };
+
+    return {
+      showData,
+    };
   },
 };
 </script>
