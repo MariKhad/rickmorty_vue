@@ -45,6 +45,10 @@ export default {
   outline: 1px solid transparent;
   color: cornsilk;
 
+  @media (max-width: 660px) {
+    width: 100%;
+  }
+
   &:hover {
     background-color: #3c3e44;
 

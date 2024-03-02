@@ -43,7 +43,7 @@ export default {
 }
 
 h1 {
-  margin-bottom: 2rem;
+  margin-bottom: 1.5rem;
   text-align: center;
 }
 
@@ -56,10 +56,17 @@ body {
 }
 
 .container {
-  width: 980px;
-  max-width: 90%;
+  width: 1320px;
   margin: 2rem auto;
   padding: 10px;
+
+  @media (max-width: 1080px) {
+    width: 980px;
+  }
+
+  @media (max-width: 660px) {
+    width: 600px;
+  }
 }
 
 img {

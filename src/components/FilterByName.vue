@@ -37,6 +37,10 @@ export default {
     background: linear-gradient(43deg, #3854dc, #3fa09a 46%, #1aff00 100%);
     color: cornsilk;
   }
+
+  @media (max-width: 660px) {
+    width: 100%;
+  }
   ::placeholder {
     color: #ffcc70;
     text-align: start;

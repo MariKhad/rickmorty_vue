@@ -36,12 +36,23 @@ export default {
 
 <style scoped>
 .container {
-  min-width: 960px;
-  margin: 0;
+  width: 1300px;
+  padding: 0px;
   display: grid;
   grid-template-columns: 7fr 2fr 1fr;
   gap: 10px;
   align-items: center;
+
+  @media (max-width: 1080px) {
+    width: 960px;
+  }
+
+  @media (max-width: 660px) {
+    width: 580px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
 }
 
 .btn {
@@ -52,6 +63,11 @@ export default {
   padding: 0 0.5rem;
   background: linear-gradient(43deg, #3854dc, #3fa09a 46%, #1aff00 100%);
   color: cornsilk;
+
+  @media (max-width: 660px) {
+    width: 100%;
+  }
+
   &:hover {
     color: var(--background-body);
   }

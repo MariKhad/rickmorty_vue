@@ -50,7 +50,7 @@ export default createStore({
         } else {
           const response = await fetch(
             `${URL}?name=${state.name}&status=${state.status}`,
-          ); //
+          );
           const { results, info } = await response.json();
           commit("setCharacters", results);
           commit("setCharactersFilter", results);

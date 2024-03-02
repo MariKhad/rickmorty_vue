@@ -58,8 +58,16 @@ export default {
 <style>
 .characters {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(27.5%, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(21.5%, 1fr));
   gap: 2rem;
   margin: 2rem 0;
+
+  @media (max-width: 1080px) {
+    grid-template-columns: repeat(auto-fill, minmax(27.5%, 1fr));
+  }
+
+  @media (max-width: 600px) {
+    grid-template-columns: repeat(auto-fill, minmax(44.5%, 1fr));
+  }
 }
 </style>
