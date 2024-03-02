@@ -16,7 +16,7 @@ export default {
     const name = ref("");
 
     const filter = () => {
-      store.dispatch("filterByName", name.value);
+      store.dispatch("setName", name.value);
     };
     return {
       name,
@@ -33,7 +33,7 @@ export default {
     width: 100%;
     border: none;
     border-radius: 10px;
-    padding: 0 0.5rem;
+    padding: 0 1rem;
     background: linear-gradient(43deg, #3854dc, #3fa09a 46%, #1aff00 100%);
     color: cornsilk;
   }

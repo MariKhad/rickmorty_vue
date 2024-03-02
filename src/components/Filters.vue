@@ -46,7 +46,6 @@ export default {
 
 .btn {
   height: 53px;
-  width: 120px;
   border: none;
   cursor: pointer;
   border-radius: 10px;

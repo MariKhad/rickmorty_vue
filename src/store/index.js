@@ -8,9 +8,9 @@ export default createStore({
     status: "",
     name: "",
     prev: "",
-    next: String,
-    person: Object,
-    isLoading: Boolean,
+    next: "https://rickandmortyapi.com/api/character?page=2",
+    person: {},
+    isLoading: false,
   },
   mutations: {
     setCharacters(state, payload) {
@@ -38,19 +38,19 @@ export default createStore({
   actions: {
     async getCharacters({ state, commit }, page) {
       try {
+        console.log("page from store: ", page);
         if (page) {
           commit("isLoading", true);
           const response = await fetch(page);
           const { results, info } = await response.json();
-          commit("setCharacters", results);
-          сommit("setCharactersFilter", results);
+          console.log("characters from state: ", state.characters);
+          commit("setCharactersFilter", results);
           commit("setNext", info.next);
           commit("setPrev", info.prev);
         } else {
           const response = await fetch(
             `${URL}?name=${state.name}&status=${state.status}`,
-          );
-          console.log(`${URL}?name=${state.name}&status=${state.status}`);
+          ); //
           const { results, info } = await response.json();
           commit("setCharacters", results);
           commit("setCharactersFilter", results);
@@ -76,12 +76,11 @@ export default createStore({
       }
     },
 
-    filterByStatus({ commit, state }, status) {
-      commit("setStatus", status.toLowerCase());
-      console.log(state.status);
+    setStatus({ commit, state }, status) {
+      commit("setStatus", status);
     },
 
-    filterByName({ commit, state }, name) {
+    setName({ commit, state }, name) {
       commit("setName", name.toLowerCase());
       console.log(state.name);
     },

@@ -1,7 +1,7 @@
 <template>
   <div class="buttons">
-    <button class="btn" @click="prevPage(pagePrev)">⬅ Back</button>
-    <button class="btn" @click="nextPage(pageNext)">Next ➡</button>
+    <button class="btn" @click="showPrevPage(pagePrev)">⬅ Back</button>
+    <button class="btn" @click="showNextPage(pageNext)">Next ➡</button>
   </div>
 </template>
 <script>
@@ -10,7 +10,6 @@ import { useStore } from "vuex";
 export default {
   setup() {
     const store = useStore();
-    /* Variables del store */
     const pageNext = computed(() => {
       return store.state.next;
     });
@@ -18,13 +17,14 @@ export default {
       return store.state.prev;
     });
 
-    /* Funciones */
-    const prevPage = (pagePrev) => {
+    const showPrevPage = (pagePrev) => {
+      console.log('pagePrev: ', pagePrev);
       if (prevPage) {
         store.dispatch("getCharacters", pagePrev);
       }
     };
-    const nextPage = (pageNext) => {
+    const showNextPage = (pageNext) => {
+      console.log('pageNext: ', pageNext);
       if (pageNext) {
         store.dispatch("getCharacters", pageNext);
       }
@@ -32,8 +32,8 @@ export default {
     return {
       pagePrev,
       pageNext,
-      nextPage,
-      prevPage,
+      showNextPage,
+      showPrevPage,
     };
   },
 };

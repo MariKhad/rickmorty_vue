@@ -2,8 +2,8 @@
   <div class="filter">
     <select class="select" @change="handleFilter">
       <option value="">All</option>
-      <option value="Alive">Alive</option>
-      <option value="Dead">Dead</option>
+      <option value="alive">Alive</option>
+      <option value="dead">Dead</option>
       <option value="unknown">Unknown</option>
     </select>
   </div>
@@ -18,7 +18,7 @@ export default {
 
     const handleFilter = (event) => {
       const status = event.target.value;
-      store.dispatch("filterByStatus", status);
+      store.dispatch("setStatus", status);
     };
 
     return {
@@ -28,18 +28,15 @@ export default {
 };
 </script>
 
-<style lang="scss">
+<style lang="scss" scoped>
 .filter {
-  width: auto;
   height: 53px;
-  margin: 0;
   overflow: hidden;
   outline: none;
 }
 
 .select {
-  width: 100%;
-  padding-left: 5px;
+  padding: 0 0.5rem;
   background-color: var(--background-card);
   border: none;
   border-radius: 10px;
