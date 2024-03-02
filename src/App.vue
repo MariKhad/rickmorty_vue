@@ -57,16 +57,9 @@ body {
 
 .container {
   max-width: 1320px;
+  width: 100%;
   margin: 2rem auto;
   padding: 10px;
-
-  @media (max-width: 1080px) {
-    max-width: 980px;
-  }
-
-  @media (max-width: 660px) {
-    max-width: 600px;
-  }
 }
 
 img {

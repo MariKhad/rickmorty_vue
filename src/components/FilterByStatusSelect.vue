@@ -1,12 +1,10 @@
 <template>
-  <div class="filter">
-    <select class="select" @change="handleFilter">
-      <option value="">All</option>
-      <option value="alive">Alive</option>
-      <option value="dead">Dead</option>
-      <option value="unknown">Unknown</option>
-    </select>
-  </div>
+  <select class="select" @change="handleFilter">
+    <option value="">All</option>
+    <option value="alive">Alive</option>
+    <option value="dead">Dead</option>
+    <option value="unknown">Unknown</option>
+  </select>
 </template>
 
 <script>
@@ -29,25 +27,17 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-.filter {
-  height: 53px;
-  overflow: hidden;
-  outline: none;
-}
-
 .select {
-  padding: 0 0.5rem;
+  width: 100%;
+  height: 53px;
+  padding: 0 1rem;
   background-color: var(--background-card);
+  color: #ffcc70;
   border: none;
   border-radius: 10px;
   appearance: none;
   cursor: pointer;
   outline: 1px solid transparent;
-  color: cornsilk;
-
-  @media (max-width: 660px) {
-    width: 100%;
-  }
 
   &:hover {
     background-color: #3c3e44;

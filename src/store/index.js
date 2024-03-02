@@ -7,7 +7,7 @@ export default createStore({
     charactersFilter: Array,
     status: "",
     name: "",
-    prev: "",
+    prev: null,
     next: "https://rickandmortyapi.com/api/character?page=2",
     person: {},
     isLoading: false,

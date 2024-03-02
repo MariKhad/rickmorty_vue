@@ -1,7 +1,7 @@
 <template>
   <form @submit.prevent="showData" class="container">
-    <FilterByName class="input" />
-    <FilterByStatusSelect class="select" />
+    <FilterByName />
+    <FilterByStatusSelect />
     <button class="btn" type="submit">Show</button>
   </form>
 </template>
@@ -37,18 +37,14 @@ export default {
 <style scoped>
 .container {
   max-width: 1300px;
+  width: 100%;
   padding: 0px;
   display: grid;
   grid-template-columns: 7fr 2fr 1fr;
   gap: 10px;
   align-items: center;
 
-  @media (max-width: 1080px) {
-    max-width: 960px;
-  }
-
   @media (max-width: 660px) {
-    max-width: 580px;
     display: flex;
     flex-direction: column;
     align-items: center;

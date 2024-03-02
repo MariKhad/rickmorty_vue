@@ -59,15 +59,21 @@ export default {
 .characters {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(21.5%, 1fr));
-  gap: 2rem;
+  gap: 1rem;
   margin: 2rem 0;
 
   @media (max-width: 1080px) {
     grid-template-columns: repeat(auto-fill, minmax(27.5%, 1fr));
   }
 
-  @media (max-width: 660px) {
+  @media (max-width: 720px) {
     grid-template-columns: repeat(auto-fill, minmax(44.5%, 1fr));
+    gap: 0.8rem;
+  }
+
+  @media (max-width: 480px) {
+    display: flex;
+    flex-direction: column;
   }
 }
 </style>

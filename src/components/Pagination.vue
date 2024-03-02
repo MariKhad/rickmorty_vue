@@ -1,7 +1,17 @@
 <template>
   <div class="buttons">
-    <button class="btn" @click="showPrevPage(pagePrev)">⬅ Back</button>
-    <button class="btn" @click="showNextPage(pageNext)">Next ➡</button>
+    <button
+      class="btn"
+      @click="showPrevPage(pagePrev)"
+      v-if="pagePrev !== null">
+      ⬅ Back
+    </button>
+    <button
+      class="btn"
+      @click="showNextPage(pageNext)"
+      v-if="pageNext !== null">
+      Next ➡
+    </button>
   </div>
 </template>
 <script>

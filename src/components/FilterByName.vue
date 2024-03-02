@@ -34,7 +34,7 @@ export default {
     border: none;
     border-radius: 10px;
     padding: 0 1rem;
-    background: linear-gradient(43deg, #3854dc, #3fa09a 46%, #1aff00 100%);
+    background-color: var(--background-card);
     color: cornsilk;
   }
 
