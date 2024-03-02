@@ -43,10 +43,10 @@ export default createStore({
           commit("isLoading", true);
           const response = await fetch(page);
           const { results, info } = await response.json();
-          console.log("characters from state: ", state.characters);
           commit("setCharactersFilter", results);
-          commit("setNext", info.next);
           commit("setPrev", info.prev);
+          console.log("prev from state", state.prev);
+          commit("setNext", info.next);
         } else {
           const response = await fetch(
             `${URL}?name=${state.name}&status=${state.status}`,
@@ -82,7 +82,6 @@ export default createStore({
 
     setName({ commit, state }, name) {
       commit("setName", name.toLowerCase());
-      console.log(state.name);
     },
   },
 });

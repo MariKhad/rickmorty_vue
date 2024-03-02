@@ -18,13 +18,11 @@ export default {
     });
 
     const showPrevPage = (pagePrev) => {
-      console.log('pagePrev: ', pagePrev);
-      if (prevPage) {
+      if (pagePrev) {
         store.dispatch("getCharacters", pagePrev);
       }
     };
     const showNextPage = (pageNext) => {
-      console.log('pageNext: ', pageNext);
       if (pageNext) {
         store.dispatch("getCharacters", pageNext);
       }
@@ -40,8 +38,9 @@ export default {
 </script>
 <style lang="scss">
 .buttons {
-  width: 330px;
   margin: 2rem auto 0;
+  display: flex;
+  justify-content: center;
   .btn {
     height: 50px;
     width: 120px;

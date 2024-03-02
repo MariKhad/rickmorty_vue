@@ -66,7 +66,7 @@ export default {
     grid-template-columns: repeat(auto-fill, minmax(27.5%, 1fr));
   }
 
-  @media (max-width: 600px) {
+  @media (max-width: 660px) {
     grid-template-columns: repeat(auto-fill, minmax(44.5%, 1fr));
   }
 }
