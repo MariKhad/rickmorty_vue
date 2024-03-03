@@ -44,7 +44,6 @@ export default createStore({
           const { results, info } = await response.json();
           commit("setCharactersFilter", results);
           commit("setPrev", info.prev);
-          console.log("prev from state", state.prev);
           commit("setNext", info.next);
         } else {
           const response = await fetch(
