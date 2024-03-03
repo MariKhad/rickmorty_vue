@@ -38,7 +38,6 @@ export default createStore({
   actions: {
     async getCharacters({ state, commit }, page) {
       try {
-        console.log("page from store: ", page);
         if (page) {
           commit("isLoading", true);
           const response = await fetch(page);

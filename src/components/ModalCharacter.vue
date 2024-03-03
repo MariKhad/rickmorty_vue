@@ -10,10 +10,7 @@
         <img :src="person.image" :alt="person.name" />
       </figure>
       <header class="modal-text">
-        <button class="close tooltip" @click="closeModal">
-          X
-          <span class="tooltiptext">Close</span>
-        </button>
+        <button class="close" @click="closeModal">X</button>
         <h2>{{ person.name }}</h2>
         <hr />
         <div>Status: {{ person.status }}</div>
@@ -140,39 +137,6 @@ figure {
 
   @media (max-width: 480px) {
     margin-right: 0px;
-  }
-}
-
-.tooltip {
-  .tooltiptext {
-    width: 120px;
-    background-color: #555;
-    border-radius: 5px;
-    padding: 5px 0;
-    position: absolute;
-    z-index: 1;
-    bottom: -180%;
-    left: 50%;
-    margin-left: -60px;
-    opacity: 0;
-    transition: opacity 0.5s;
-
-    &::after {
-      content: "";
-      position: absolute;
-      top: -40%;
-      left: 50%;
-      margin-left: -5px;
-      border-width: 5px;
-      border-style: solid;
-      border-color: #555 transparent transparent transparent;
-      transform: rotate(0.5turn);
-    }
-  }
-
-  &:hover .tooltiptext {
-    visibility: visible;
-    opacity: 1;
   }
 }
 </style>
