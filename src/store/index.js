@@ -3,8 +3,7 @@ import { URL } from "../../const";
 
 export default createStore({
   state: {
-    characters: Array,
-    charactersFilter: Array,
+    charactersFilter: [],
     status: "",
     name: "",
     prev: null,
@@ -50,7 +49,6 @@ export default createStore({
             `${URL}?name=${state.name}&status=${state.status}`,
           );
           const { results, info } = await response.json();
-          commit("setCharacters", results);
           commit("setCharactersFilter", results);
           commit("setNext", info.next);
         }

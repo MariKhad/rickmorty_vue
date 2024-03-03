@@ -67,6 +67,12 @@ export default {
     &:active {
       transform: translate(2px, 2px);
     }
+
+    @media (max-width: 480px) {
+      &:hover {
+        color: cornsilk;
+      }
+    }
   }
 }
 </style>
