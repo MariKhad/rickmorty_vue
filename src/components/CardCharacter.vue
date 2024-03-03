@@ -91,7 +91,12 @@ export default {
     box-shadow: 0 0 25px 1px var(--text-green);
 
     h2 {
-      color: var(--text-orange);
+      color: var(--text-green);
+    }
+
+    @media (max-width: 480px) {
+      transform: none;
+      box-shadow: none;
     }
   }
 

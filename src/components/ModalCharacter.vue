@@ -30,7 +30,7 @@
           }}
         </div>
         <div>Gender: {{ person.gender }}</div>
-        <div>Type: {{ person.type }}</div>
+        <div v-if="person.type">Type: {{ person.type }}</div>
       </header>
     </section>
     <section v-else>
@@ -76,24 +76,30 @@ export default {
 }
 
 .modal {
-  width: 90%;
+  max-width: 90%;
   max-height: 85%;
-  grid-column: 55% 45%;
   background: rgba(36, 36, 36, 0.5);
   backdrop-filter: blur(15px);
   border-radius: 20px;
   color: whitesmoke;
   display: flex;
+  padding: 0.8rem;
+
+  @media (max-width: 480px) {
+    flex-direction: column;
+  }
 
   &-text {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
     width: 100%;
-    margin: 1% 0 2% 2%;
-
+    word-wrap: break-word;
     button {
       width: 30px;
       height: 30px;
       position: absolute;
-      right: 8px;
+      right: 10px;
       margin: 0px 0px 10px 0px;
       top: 10px;
       color: whitesmoke;
@@ -109,20 +115,31 @@ export default {
       &alt {
         background-color: transparent;
       }
+
+      @media (max-width: 480px) {
+        color: black;
+        background-color: rgba(245, 245, 245, 0.2);
+        right: 15px;
+        top: 15px;
+      }
     }
 
     h2 {
-      margin-top: 1rem;
+      margin-top: 0.5rem;
     }
   }
 }
 
 figure {
-  margin: 0;
+  margin-right: 1rem;
 
   img {
     height: 100%;
     border-radius: 20px;
+  }
+
+  @media (max-width: 480px) {
+    margin-right: 0px;
   }
 }
 
