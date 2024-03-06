@@ -1,4 +1,4 @@
-<template v-once>
+<template>
   <div class="container">
     <h1>Rick &amp; Morty</h1>
     <Filters />
@@ -7,24 +7,13 @@
   </div>
 </template>
 
-<script>
+<script setup>
 import { onMounted } from "vue";
 import { useStore } from "vuex";
 import { ListCharacters, Filters, Pagination } from "@components";
-export default {
-  name: "App",
-  components: {
-    ListCharacters,
-    Filters,
-    Pagination,
-  },
-  setup() {
-    const store = useStore();
-    onMounted(() => {
-      store.dispatch("getCharacters");
-    });
-  },
-};
+
+const store = useStore();
+onMounted(() => store.dispatch("getCharacters"));
 </script>
 
 <style lang="scss">

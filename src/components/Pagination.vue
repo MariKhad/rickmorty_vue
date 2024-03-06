@@ -61,16 +61,14 @@ export default {
     padding: 0 0.5rem;
     background: linear-gradient(43deg, #3854dc, #3fa09a 46%, #1aff00 100%);
     color: cornsilk;
-    &:hover {
-      color: var(--background-body);
-    }
+
     &:active {
       transform: translate(2px, 2px);
     }
 
-    @media (max-width: 480px) {
+    @media screen and (min-width: 440px) {
       &:hover {
-        color: cornsilk;
+        color: var(--background-body);
       }
     }
   }
